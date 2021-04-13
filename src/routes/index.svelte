@@ -1,6 +1,7 @@
 <script>
 	import Counter from '$lib/Counter.svelte';
-	import { _ } from 'precompile-intl-runtime';
+	// import { _ } from 'svelte-i18n';
+	// import { _ } from 'precompile-intl-runtime';
 	let now = new Date();
 </script>
 
@@ -10,7 +11,7 @@
 
 <main>
 	<h1>Hello world!</h1>
-	<p>{$_('plain')}</p>
+	<!-- <p>{$_('plain')}</p>
 	<p>{$_('interpolated', { values: { count: 123 }})}</p>
 	<p>{$_('time', { values: { now: now } })}</p>
 	<p>{$_('date', { values: { today: now } })}</p>
@@ -18,7 +19,7 @@
 	<p>{$_('number', { values: { n: 1.34 } })}</p>
 	<p>{$_('pluralized', { values: { count: 2 } })}</p>
 	<p>{$_('pluralized-with-hash', { values: { count: 1 } })}</p>
-	<p>{$_('selected', { values: { gender: 'female' } })}</p>
+	<p>{$_('selected', { values: { gender: 'female' } })}</p> -->
 
 	<Counter />
 

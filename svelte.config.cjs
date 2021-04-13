@@ -20,21 +20,21 @@ module.exports = {
 				noExternal: Object.keys(pkg.dependencies || {})
 			},
             plugins: [
-                myPlugin()
+                // myPlugin()
             ]			
 		}
 	}
 };
 
-function myPlugin() {  
-	return {
-	  	name: 'my-plugin', // required, will show up in warnings and errors
-		transform(code, id, ssr) {			
-			if (id.indexOf('locales/en') > -1) {
-				return babel.transform(code, {
-					plugins: [intlPrecompiler]
-				}).code
-			}
-		}
-	}
-}
+// function myPlugin() {  
+// 	return {
+// 	  	name: 'my-plugin', // required, will show up in warnings and errors
+// 		transform(code, id, ssr) {			
+// 			if (id.indexOf('locales/en') > -1) {
+// 				return babel.transform(code, {
+// 					plugins: [intlPrecompiler]
+// 				}).code
+// 			}
+// 		}
+// 	}
+// }
