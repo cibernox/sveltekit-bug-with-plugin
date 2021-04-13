@@ -1,4 +1,5 @@
-const node = require('@sveltejs/adapter-node');
+// const node = require('@sveltejs/adapter-node');
+const netlify = require('@sveltejs/adapter-netlify')
 const pkg = require('./package.json');
 const babel = require('@babel/core');
 const intlPrecompiler = require("babel-plugin-precompile-intl");
@@ -10,7 +11,8 @@ module.exports = {
 		// By default, `npm run build` will create a standard Node app.
 		// You can create optimized builds for different platforms by
 		// specifying a different adapter
-		adapter: node(),
+		// adapter: node(),
+		adapter: netlify(),
 
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',

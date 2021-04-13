@@ -9,6 +9,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.13.15",
+		"@sveltejs/adapter-netlify": "^1.0.0-next.4",
 		"@sveltejs/adapter-node": "next",
 		"@sveltejs/kit": "next",
 		"babel-plugin-precompile-intl": "0.0.8",
