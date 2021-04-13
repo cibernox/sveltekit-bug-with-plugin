@@ -1,0 +1,24 @@
+{
+	"name": "intl-app",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "svelte-kit dev",
+		"build": "svelte-kit build",
+		"start": "svelte-kit start",
+		"lint": "eslint --ignore-path .gitignore ."
+	},
+	"devDependencies": {
+		"@babel/core": "^7.13.15",
+		"@sveltejs/adapter-node": "next",
+		"@sveltejs/kit": "next",
+		"babel-plugin-precompile-intl": "0.0.8",
+		"eslint": "^7.22.0",
+		"eslint-plugin-svelte3": "^3.1.0",
+		"svelte": "^3.29.0",
+		"vite": "^2.1.0"
+	},
+	"type": "module",
+	"dependencies": {
+		"precompile-intl-runtime": "^0.1.0"
+	}
+}
