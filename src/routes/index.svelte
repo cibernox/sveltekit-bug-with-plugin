@@ -2,6 +2,8 @@
 	import Counter from '$lib/Counter.svelte';
 	import { _ } from 'precompile-intl-runtime';
 	let now = new Date();
+	let gender = 'female';
+	let count = 1;
 </script>
 
 <svelte:head>
@@ -17,10 +19,15 @@
 	<p>{$_('number', { values: { n: 123456789 } })}</p>
 	<p>{$_('number', { values: { n: 1.34 } })}</p>
 	<p>{$_('pluralized', { values: { count: 2 } })}</p>
-	<p>{$_('pluralized-with-hash', { values: { count: 1 } })}</p>
-	<p>{$_('selected', { values: { gender: 'female' } })}</p>
+	<p>{$_('pluralized-with-hash', { values: { count } })}</p>
+	<p>{$_('selected', { values: { gender } })}</p>
 
-	<Counter />
+	<Counter bind:count={count}/>
+	<select bind:value={gender}>
+		<option value="male">Male</option>
+		<option value="female">Female</option>
+		<option value="other">Other</option>
+	</select>
 
 	<p>Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte apps.</p>
 </main>
