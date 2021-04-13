@@ -19,6 +19,11 @@ module.exports = {
 			ssr: {
 				noExternal: Object.keys(pkg.dependencies || {})
 			},
+
+			optimizeDeps: {
+				exclude: ['precompile-intl-runtime']
+			},
+
             plugins: [
                 myPlugin()
             ]			
