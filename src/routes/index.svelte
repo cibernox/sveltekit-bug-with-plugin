@@ -1,11 +1,9 @@
 <script>
 	import Counter from '$lib/Counter.svelte';
+	import { _ } from 'precompile-intl-runtime';
 	let now = new Date();
 	let gender = 'female';
 	let count = 1;
-	function _(str) {
-		return str;
-	}
 </script>
 
 <svelte:head>
@@ -14,15 +12,15 @@
 
 <main>
 	<h1>Hello world!</h1>
-	<p>{_('plain')}</p>
-	<p>{_('interpolated', { values: { count: 123 }})}</p>
-	<p>{_('time', { values: { now: now } })}</p>
-	<p>{_('date', { values: { today: now } })}</p>
-	<p>{_('number', { values: { n: 123456789 } })}</p>
-	<p>{_('number', { values: { n: 1.34 } })}</p>
-	<p>{_('pluralized', { values: { count: 2 } })}</p>
-	<p>{_('pluralized-with-hash', { values: { count } })}</p>
-	<p>{_('selected', { values: { gender } })}</p>
+	<p>{$_('plain')}</p>
+	<p>{$_('interpolated', { values: { count: 123 }})}</p>
+	<p>{$_('time', { values: { now: now } })}</p>
+	<p>{$_('date', { values: { today: now } })}</p>
+	<p>{$_('number', { values: { n: 123456789 } })}</p>
+	<p>{$_('number', { values: { n: 1.34 } })}</p>
+	<p>{$_('pluralized', { values: { count: 2 } })}</p>
+	<p>{$_('pluralized-with-hash', { values: { count } })}</p>
+	<p>{$_('selected', { values: { gender } })}</p>
 
 	<Counter bind:count={count}/>
 	<select bind:value={gender}>

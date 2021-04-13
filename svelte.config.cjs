@@ -1,8 +1,8 @@
 // const node = require('@sveltejs/adapter-node');
 const netlify = require('@sveltejs/adapter-netlify')
 const pkg = require('./package.json');
-// const babel = require('@babel/core');
-// const intlPrecompiler = require("babel-plugin-precompile-intl");
+const babel = require('@babel/core');
+const intlPrecompiler = require("babel-plugin-precompile-intl");
 
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -22,26 +22,26 @@ module.exports = {
 				noExternal: Object.keys(pkg.dependencies || {})
 			},
 
-			// optimizeDeps: {
-			// 	exclude: ['precompile-intl-runtime']
-			// },
+			optimizeDeps: {
+				exclude: ['precompile-intl-runtime']
+			},
 
-            // plugins: [
-            //     myPlugin()
-            // ]			
+            plugins: [
+                myPlugin()
+            ]			
 		}
 	}
 };
 
-// function myPlugin() {  
-// 	return {
-// 	  	name: 'my-plugin', // required, will show up in warnings and errors
-// 		transform(code, id, ssr) {			
-// 			if (id.indexOf('locales/en') > -1) {
-// 				return babel.transform(code, {
-// 					plugins: [intlPrecompiler]
-// 				}).code
-// 			}
-// 		}
-// 	}
-// }
+function myPlugin() {  
+	return {
+	  	name: 'my-plugin', // required, will show up in warnings and errors
+		transform(code, id, ssr) {			
+			if (id.indexOf('locales/en') > -1) {
+				return babel.transform(code, {
+					plugins: [intlPrecompiler]
+				}).code
+			}
+		}
+	}
+}
