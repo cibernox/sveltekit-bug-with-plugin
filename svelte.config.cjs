@@ -4,7 +4,6 @@ const pkg = require('./package.json');
 const babel = require('@babel/core');
 const intlPrecompiler = require("babel-plugin-precompile-intl");
 
-
 /** @type {import('@sveltejs/kit').Config} */
 module.exports = {
 	kit: {
@@ -27,20 +26,22 @@ module.exports = {
 			},
 
             plugins: [
-                myPlugin()
+                svelteIntlPrecompile('locales')
             ]			
 		}
 	}
 };
 
-function myPlugin() {  
+function svelteIntlPrecompile(root) {  
 	return {
 	  	name: 'my-plugin', // required, will show up in warnings and errors
-		transform(code, id, ssr) {			
-			if (id.indexOf('locales/en') > -1) {
+		transform(code, id) {			
+			if (id.indexOf('locales') > -1) {
+				debugger;
+				debugger;
 				return babel.transform(code, {
 					plugins: [intlPrecompiler]
-				}).code
+				}).code;
 			}
 		}
 	}

@@ -20,6 +20,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"precompile-intl-runtime": "^0.2.1"
+		"precompile-intl-runtime": "^0.2.5"
 	}
 }
