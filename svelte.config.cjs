@@ -3,6 +3,7 @@ const netlify = require('@sveltejs/adapter-netlify')
 const pkg = require('./package.json');
 const babel = require('@babel/core');
 const intlPrecompiler = require("babel-plugin-precompile-intl");
+const path = require('path');
 
 /** @type {import('@sveltejs/kit').Config} */
 module.exports = {
@@ -20,11 +21,7 @@ module.exports = {
 			ssr: {
 				noExternal: Object.keys(pkg.dependencies || {})
 			},
-
-			optimizeDeps: {
-				exclude: ['precompile-intl-runtime']
-			},
-
+			
             plugins: [
                 svelteIntlPrecompile('locales')
             ]			
@@ -32,13 +29,11 @@ module.exports = {
 	}
 };
 
-function svelteIntlPrecompile(root) {  
+function svelteIntlPrecompile(localesRoot) {  
 	return {
-	  	name: 'my-plugin', // required, will show up in warnings and errors
-		transform(code, id) {			
-			if (id.indexOf('locales') > -1) {
-				debugger;
-				debugger;
+	  	name: 'svelte-intl-precompile', // required, will show up in warnings and errors
+		transform(code, id) {	
+			if (id.includes(path.resolve(localesRoot))) {
 				return babel.transform(code, {
 					plugins: [intlPrecompiler]
 				}).code;
