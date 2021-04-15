@@ -1,6 +1,6 @@
 <script>
 	import Counter from '$lib/Counter.svelte';
-	import { t, locale, locales } from 'precompile-intl-runtime';
+	import { t, locale, locales } from 'svelte-intl-precompile';
 	let now = new Date();
 	let gender = 'female';
 	let count = 1;

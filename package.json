@@ -12,7 +12,6 @@
 		"@sveltejs/adapter-netlify": "^1.0.0-next.4",
 		"@sveltejs/adapter-node": "next",
 		"@sveltejs/kit": "next",
-		"babel-plugin-precompile-intl": "0.0.8",
 		"eslint": "^7.22.0",
 		"eslint-plugin-svelte3": "^3.1.0",
 		"svelte": "^3.37.0",
@@ -20,6 +19,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"precompile-intl-runtime": "^0.2.5"
+		"svelte-intl-precompile": "0.0.8"
 	}
 }
