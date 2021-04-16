@@ -1,10 +1,10 @@
 <script context="module">
 	import { addMessages, init } from 'svelte-intl-precompile';
     import en from '../../locales/en.js';
-    // import es from '../../locales/es.js';
+    import es from '../../locales/es.js';
 	// @ts-ignore
     addMessages('en', en)
-    // addMessages('es', es)
+    addMessages('es', es)
 
     init({
 		fallbackLocale: 'en',
