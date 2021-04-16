@@ -1,7 +1,7 @@
 <script>
 	import Counter from '$lib/Counter.svelte';
-	import { t, locale, locales } from 'svelte-intl-precompile';
-	let now = new Date();
+	import Translations from '$lib/Translations.svelte';
+	import { locale, locales } from 'svelte-intl-precompile';
 	let gender = 'female';
 	let count = 1;
 </script>
@@ -12,15 +12,7 @@
 
 <main>
 	<h1>Hello world!</h1>
-	<p>{$t('plain')}</p>
-	<p>{$t('interpolated', { values: { count: 123 }})}</p>
-	<p>{$t('time', { values: { now: now } })}</p>
-	<p>{$t('date', { values: { today: now } })}</p>
-	<p>{$t('number', { values: { n: 123456789 } })}</p>
-	<p>{$t('number', { values: { n: 1.34 } })}</p>
-	<p>{$t('pluralized', { values: { count: 2 } })}</p>
-	<p>{$t('pluralized-with-hash', { values: { count } })}</p>
-	<p>{$t('selected', { values: { gender } })}</p>
+	<Translations count={count} gender={gender}/>
 
 	<Counter bind:count={count}/>
 	<select bind:value={gender}>
