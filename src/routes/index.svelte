@@ -4,6 +4,7 @@
 	import { locale, locales } from 'svelte-intl-precompile';
 	let gender = 'female';
 	let count = 1;
+	let showTranslations = false;
 </script>
 
 <svelte:head>
@@ -12,7 +13,11 @@
 
 <main>
 	<h1>Hello world!</h1>
-	<Translations count={count} gender={gender}/>
+	<button type="button" on:click={() => showTranslations = !showTranslations}>Show translations</button>
+
+	{#if showTranslations}
+		<Translations count={count} gender={gender}/>
+	{/if}
 
 	<Counter bind:count={count}/>
 	<select bind:value={gender}>
