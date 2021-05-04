@@ -20,6 +20,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"svelte-intl-precompile": "0.0.8"
+		"svelte-intl-precompile": "0.2.1"
 	}
 }

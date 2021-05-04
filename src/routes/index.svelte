@@ -4,7 +4,7 @@
 	import { locale, locales } from 'svelte-intl-precompile';
 	let gender = 'female';
 	let count = 1;
-	let showTranslations = false;
+	let showTranslations = true;
 </script>
 
 <svelte:head>
