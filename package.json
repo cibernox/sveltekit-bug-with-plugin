@@ -20,6 +20,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"svelte-intl-precompile": "0.2.1"
+		"svelte-intl-precompile": "cibernox/svelte-intl-precompile#6497cf11406f484154459f0bde0a0259939a8ca3"
 	}
 }

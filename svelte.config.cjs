@@ -1,6 +1,7 @@
-const netlify = require('@sveltejs/adapter-netlify')
+const node = require('@sveltejs/adapter-netlify')
+// const netlify = require('@sveltejs/adapter-node')
 const pkg = require('./package.json');
-const precompileIntl = require("svelte-intl-precompile/sveltekit-plugin");
+const precompileIntl = require("svelte-intl-precompile/sveltekit-plugin.cjs");
 
 /** @type {import('@sveltejs/kit').Config} */
 module.exports = {
@@ -9,7 +10,7 @@ module.exports = {
 		// You can create optimized builds for different platforms by
 		// specifying a different adapter
 		// adapter: node(),
-		adapter: netlify(),
+		adapter: node(),
 
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
